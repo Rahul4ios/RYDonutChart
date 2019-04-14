@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RYDonutChart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="vfK-rs-2ls">
+                                <rect key="frame" x="159.5" y="315.5" width="56" height="56"/>
+                                <color key="backgroundColor" red="0.0" green="0.67843137254901964" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vfK-rs-2ls" secondAttribute="height" multiplier="1:1" id="qxd-PN-u31"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saI-wB-FzR" userLabel="piechart" customClass="Piechart" customModule="Layers" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="156" width="375" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="saI-wB-FzR" secondAttribute="height" multiplier="1:1" id="VLh-M7-Y8d"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jR8-xz-Ymd" appends="YES" id="6z4-Nh-2VX"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.67843137254901964" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vfK-rs-2ls" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="YlR-3q-Rhs"/>
+                            <constraint firstItem="vfK-rs-2ls" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" id="aD2-Pf-C42"/>
+                            <constraint firstItem="saI-wB-FzR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="e7x-1G-lQG"/>
+                            <constraint firstItem="vfK-rs-2ls" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.15" id="ha3-6Z-btu"/>
+                            <constraint firstItem="saI-wB-FzR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="mMN-Bt-37Z"/>
+                            <constraint firstItem="saI-wB-FzR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="xcd-aX-IGZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ourImageView" destination="vfK-rs-2ls" id="L3G-Cz-Myg"/>
+                        <outlet property="piechartOverlayView" destination="saI-wB-FzR" id="wYa-98-Nmk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jR8-xz-Ymd">
+                    <connections>
+                        <action selector="tappedOnMe:" destination="saI-wB-FzR" id="4qC-20-5eU"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="avatar" width="157.53846740722656" height="157.53846740722656"/>
+    </resources>
+</document>
