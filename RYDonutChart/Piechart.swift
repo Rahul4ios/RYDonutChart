@@ -46,25 +46,24 @@ class Piechart: UIView {
         let data2FractionalValue:CGFloat = 0.2
         let startAngle2:CGFloat = endAngle1 + dataAngleReductionHalf
         let endAngle2:CGFloat = startAngle2 + (((2 * CGFloat.pi)*data2FractionalValue) - dataAngleReductionHalf)
-        let data2 = PiechartData(fractionalValue: data2FractionalValue, startAngle: startAngle2, endAngle: endAngle2, imageName: "eth", abbr: "ETH", isFaded: false, widthFractionWRTMax: widthFractionWRTMaxDelta, radialTextualRefPointInside: nil, radialTextualRefPointOutside: nil)//(data2FractionalValue/data1FractionalValue) * widthFractionWRTMaxDelta)
+        let data2 = PiechartData(fractionalValue: data2FractionalValue, startAngle: startAngle2, endAngle: endAngle2, imageName: "eth", abbr: "ETH", isFaded: false, widthFractionWRTMax: widthFractionWRTMaxDelta, radialTextualRefPointInside: nil, radialTextualRefPointOutside: nil)
 
         let data3FractionalValue:CGFloat = 0.17
         let startAngle3:CGFloat = endAngle2 + dataAngleReductionHalf
         let endAngle3:CGFloat = startAngle3 + (((2 * CGFloat.pi)*data3FractionalValue) - dataAngleReductionHalf)
-        let data3 = PiechartData(fractionalValue: data3FractionalValue, startAngle: startAngle3, endAngle: endAngle3, imageName: "xrp", abbr: "XRP", isFaded: false, widthFractionWRTMax: widthFractionWRTMaxDelta, radialTextualRefPointInside: nil, radialTextualRefPointOutside: nil)//(data3FractionalValue/data1FractionalValue) * widthFractionWRTMaxDelta)
+        let data3 = PiechartData(fractionalValue: data3FractionalValue, startAngle: startAngle3, endAngle: endAngle3, imageName: "xrp", abbr: "XRP", isFaded: false, widthFractionWRTMax: widthFractionWRTMaxDelta, radialTextualRefPointInside: nil, radialTextualRefPointOutside: nil)
 
         let data4FractionalValue:CGFloat = 0.14
         let startAngle4:CGFloat = endAngle3 + dataAngleReductionHalf
         let endAngle4:CGFloat = startAngle4 + (((2 * CGFloat.pi)*data4FractionalValue) - dataAngleReductionHalf)
-        let data4 = PiechartData(fractionalValue: data4FractionalValue, startAngle: startAngle4, endAngle: endAngle4, imageName: "ltc", abbr: "LTC", isFaded: false, widthFractionWRTMax: widthFractionWRTMaxDelta, radialTextualRefPointInside: nil, radialTextualRefPointOutside: nil)//(data4FractionalValue/data1FractionalValue) * widthFractionWRTMaxDelta)
+        let data4 = PiechartData(fractionalValue: data4FractionalValue, startAngle: startAngle4, endAngle: endAngle4, imageName: "ltc", abbr: "LTC", isFaded: false, widthFractionWRTMax: widthFractionWRTMaxDelta, radialTextualRefPointInside: nil, radialTextualRefPointOutside: nil)
 
         let data5FractionalValue:CGFloat = 0.09
         let startAngle5:CGFloat = endAngle4 + dataAngleReductionHalf
         let endAngle5:CGFloat = startAngle5 + (((2 * CGFloat.pi)*data5FractionalValue) - dataAngleReductionHalf)
-        let data5 = PiechartData(fractionalValue: data5FractionalValue, startAngle: startAngle5, endAngle: endAngle5, imageName: nil, abbr: "other\ncoins", isFaded: true, widthFractionWRTMax: widthFractionWRTMaxDelta, radialTextualRefPointInside: nil, radialTextualRefPointOutside: nil)//(data5FractionalValue/data1FractionalValue) * widthFractionWRTMaxDelta)
+        let data5 = PiechartData(fractionalValue: data5FractionalValue, startAngle: startAngle5, endAngle: endAngle5, imageName: nil, abbr: "other\ncoins", isFaded: true, widthFractionWRTMax: widthFractionWRTMaxDelta, radialTextualRefPointInside: nil, radialTextualRefPointOutside: nil)
 
         return [data1, data2, data3, data4, data5]
-//        return [data1]
     }()
     static let curvedPathGapFraction:CGFloat = 0.07   // w.r.t 2 * pi
     let curvedPathMaxWidthFraction:CGFloat = 0.15   // w.r.t curvedPathRadius
@@ -171,31 +170,7 @@ class Piechart: UIView {
         }
         arcLayer.add(animation, forKey: nil)
         CATransaction.commit()
-        
-//        // Lets set textual positions
-//        let textualPositions = returnTextualPositionsFrom(data: data)
-//        data.radialTextualRefPointInside = textualPositions.0
-//        data.radialTextualRefPointOutside = textualPositions.1
-        
     }
-    
-//    // I calculate inside and outside textual positions from data's start and end angle
-//    func returnTextualPositionsFrom(data:PiechartData) -> (CGPoint, CGPoint){
-//
-//        let viewRadius:CGFloat = (frame.width/2)
-//        let curveMiddleAngle:CGFloat = (data.startAngle + data.endAngle)/2
-//        let innerTextualRadius:CGFloat = viewRadius * kInnerTextualRadiusFraction
-//        let outerTextualRadius:CGFloat = viewRadius * kOuterTextualRadiusFraction
-//        let innerTextualPositionX:CGFloat = viewRadius + (innerTextualRadius * sin(curveMiddleAngle))
-//        let innerTextualPositionY:CGFloat = viewRadius - (innerTextualRadius * cos(curveMiddleAngle))
-//        let outerTextualPositionX:CGFloat = viewRadius + (outerTextualRadius * sin(curveMiddleAngle))
-//        let outerTextualPositionY:CGFloat = viewRadius - (outerTextualRadius * cos(curveMiddleAngle))
-//
-//        let innerTextualPosition:CGPoint = CGPoint(x: innerTextualPositionX, y: innerTextualPositionY)
-//        let outerTextualPosition:CGPoint = CGPoint(x: outerTextualPositionX, y: outerTextualPositionY)
-//
-//        return (innerTextualPosition, outerTextualPosition)
-//    }
     
     /**
      Add textual layers
